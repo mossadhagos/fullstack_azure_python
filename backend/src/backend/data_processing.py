@@ -26,13 +26,13 @@ df["category"] = df["Eclipse Type"].map({
 
 
 def to_records(dataframe: pd.DataFrame) -> list[dict]:
-    return dataframe.where(pd.notnull(dataframe),None).to_dict(orient="records")
+    return dataframe.astype(object).where(dataframe.notna(),None).to_dict(orient="records")
 
 def summary(dataframe: pd.DataFrame) -> dict:
     return {
         "total_eclipse": len(dataframe),
         "categories": dataframe["category"].value_counts().to_dict(),
-        "year_from": int(dataframe["year"].min()),
-        "year_to": int(dataframe["year"].max()),
+        "year_from": int(dataframe["Year"].min()),
+        "year_to": int(dataframe["Year"].max()),
         "saros_series": int(dataframe["Saros Number"].nunique()),
     }
