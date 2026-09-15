@@ -7,7 +7,7 @@ authors = [
     { name = "mossadhagos", email = "155261758+mossadhagos@users.noreply.github.com" }
 ]
 requires-python = ">=3.13"
-dependencies = ["streamlit", "httpx"]
+dependencies = ["streamlit", "httpx", "pandas"]
 
 [project.scripts]
 frontend = "frontend:main"
