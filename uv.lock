@@ -253,12 +253,14 @@ version = "0.1.0"
 source = { editable = "frontend" }
 dependencies = [
     { name = "httpx" },
+    { name = "pandas" },
     { name = "streamlit" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "httpx" },
+    { name = "pandas" },
     { name = "streamlit" },
 ]
 
